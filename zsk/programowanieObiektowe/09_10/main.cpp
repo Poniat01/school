@@ -10,24 +10,73 @@ class Worker {
 // deklaracja zmiennych cz³onkowskich
 		string name;
 		string surname;	
-		int age; // dokonczyæ, sprawdziæ typ danych
+		unsigned short int birthYear; 
+		string nationality;
+		float height;
+		char gender;
 		
+		void showName();
+		
+		void showSurname();
+		
+		void showAllData();
+		
+		void showNameSurname();
+				
 // definicje funkcji cz³onkowskich (metody)
-		void showSurname() {
-			cout << "Nazwisko " << surname;
-		};
+//		void showSurname() {
+//			cout << "Nazwisko " << surname;
+//		};
 		
 
 //brak nawiasów {} klamrowych to deklaracja metody (prototyp metody)
-		void showAllData();
+//		void showAllData();
 	
 };
 
-// definicja metody showAllData()
 
-void Worker::showAllData() {
-	cout << "Imiê i nazwisko: "	 << name << " " << surname;
+void Worker::showName() {
+	cout << name << endl;
+	cout << endl;
 };
+
+void Worker::showSurname() {
+	cout << surname << endl;
+	cout << endl;
+};
+
+void Worker::showNameSurname() {
+	cout << "Imiê i nazwisko: "	 << name << " " << surname << endl;
+	cout << endl;
+};
+
+// definicja metody showAllData()
+void Worker::showAllData() {
+	
+	
+	
+	cout << "Imiê i nazwisko: "	 << name << " " << surname << endl;
+	cout << "Narodowoœæ: " << nationality << endl;
+	cout << "Rok urodzenia: " << birthYear << ", Wzrost: " << height << "cm" << endl;
+	cout << "P³eæ: ";
+	switch(gender) {
+		case 'm':
+			cout << "me¿czyzna";
+			break;
+		
+		case 'w':
+			cout << "kobieta";
+			break;
+		
+		default:
+			cout << '-';
+			break;
+		
+	};
+	
+	cout << endl;
+};
+
 
 
 
@@ -39,13 +88,22 @@ int main(int argc, char** argv) {
 	Worker worker1;
 	worker1.name = "Krystian";
 	worker1.surname = "Nowak";
+	worker1.birthYear = 2005;
+	worker1.nationality = "POLISH";
+	worker1.height = 182.5;
+	worker1.gender = 'w';
 	
 
-	cout << worker1.name << endl;
-	worker1.showSurname();
-	cout << endl;
+	//cout << worker1.name << endl;
+	//worker1.showSurname();
+	//cout << endl;
+	//worker1.showAllData();
+	//cout << endl;
+	
 	worker1.showAllData();
-	cout << endl;
+	worker1.showName();
+	worker1.showNameSurname();
+	worker1.showSurname();	
 	
 	
 	
